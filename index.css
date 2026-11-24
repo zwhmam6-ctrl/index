@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html, body, #root { min-height: 100%; }
+body { @apply bg-ink text-slate-100 font-sans antialiased; }
+:focus-visible { outline: 2px solid #6EA3FF; outline-offset: 2px; }
+
+@layer components {
+  .card { @apply rounded-2xl border border-navy-600/60 bg-navy-800/80; }
+  .input { @apply w-full rounded-xl border border-navy-600 bg-navy-900 px-4 py-3 text-sm placeholder:text-mist/60 focus:border-volt focus:outline-none; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition disabled:opacity-50; }
+  .btn-primary { @apply btn bg-volt text-white hover:bg-volt-deep; }
+  .btn-ghost { @apply btn border border-navy-600 text-slate-100 hover:bg-navy-700; }
+  .btn-danger { @apply btn border border-red-500/50 text-red-300 hover:bg-red-500/10; }
+  .field-error { @apply mt-1 text-xs text-red-400; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
